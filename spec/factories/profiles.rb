@@ -8,12 +8,12 @@ FactoryBot.define do
     work_group
     title { 'default' }
 
-    factory :profile_with_empty_title do
+    factory :profile_with_nil_title do
       title { nil }
     end
 
-    factory :root_profile_with_parent_id do
-      parent_id { 1 }
+    factory :profile_with_empty_title do
+      title { '' }
     end
 
     factory :valid_child_profile do
@@ -23,10 +23,6 @@ FactoryBot.define do
     factory :is_root_profile do
       is_root { true }
       is_active { true }
-    end
-
-    factory :is_inactive_profile do
-      title { 'inactive profile' }
     end
 
     factory :is_active_profile do

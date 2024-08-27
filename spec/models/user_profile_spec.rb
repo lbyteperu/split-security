@@ -2,23 +2,23 @@
 
 require 'rails_helper'
 
-RSpec.describe UserProfile, type: :model do
-  subject(:user_with_root_profile) { build :user_profile }
+RSpec.describe UserProfile do
+  subject(:basic_user_profile) { build(:user_profile) }
 
-  let(:it_admin) { build :user_profile }
+  let(:it_admin) { build(:user_profile) }
 
-  context 'when create a use profile' do
-    describe 'valid data' do
-      it 'is success' do
-        it_admin.valid?
-        expect(it_admin).to be_valid
+  describe 'given a root profile' do
+    context 'when user is valid' do
+      it 'accesses profile title from user' do
+        basic_user_profile.valid?
+        basic_user_profile.save!
+        expect(User.last.profiles.first.title).to eq 'default'
       end
-    end
 
-    describe 'when user with root profile' do
-      it 'is valid' do
-        user_with_root_profile.valid?
-        expect(user_with_root_profile).to be_valid
+      it 'accesses user nane from profile' do
+        basic_user_profile.valid?
+        basic_user_profile.save!
+        expect(Profile.last.users.first.name).to eq 'pedro'
       end
     end
   end

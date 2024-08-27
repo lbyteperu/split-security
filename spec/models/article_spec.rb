@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe Article, type: :model do
-  subject(:article) { build :article }
+RSpec.describe Article do
+  subject(:article) { build(:article) }
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:title) }

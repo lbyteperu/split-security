@@ -18,7 +18,10 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 3.2'
   gem 'rspec-rails', '~> 6.0'
+  gem 'rubocop-factory_bot', '~> 2.26', '>= 2.26.1'
   gem 'rubocop-rails'
+  gem 'rubocop-rspec', '~> 3.0', '>= 3.0.4'
+  gem 'rubocop-rspec_rails', '~> 2.30'
   gem 'simplecov_json_formatter', '~> 0.1.4', require: false
 end
 

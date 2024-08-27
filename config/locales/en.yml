@@ -31,3 +31,4 @@
 
 en:
   hello: "Hello world"
+  message_strong_password: "should contain a number, lowercase and uppercase letter, symbol"

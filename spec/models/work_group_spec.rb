@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe WorkGroup, type: :model do
-  subject(:profile) { build :work_group }
+RSpec.describe WorkGroup do
+  subject(:profile) { build(:work_group) }
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:title) }

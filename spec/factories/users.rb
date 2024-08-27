@@ -31,14 +31,42 @@ FactoryBot.define do
       password_confirmation { '' }
     end
 
+    factory :user_with_short_password do
+      name { nil }
+      uid { email }
+      password { '123' }
+      password_confirmation { '123' }
+    end
+
+    factory :user_with_long_password do
+      name { nil }
+      uid { email }
+      password { '1' * 129 }
+      password_confirmation { '1' * 129 }
+    end
+
+    factory :user_password_without_number do
+      name { nil }
+      uid { email }
+      password { 'testSTRONG$' }
+      password_confirmation { 'testSTRONG$' }
+    end
+
+    factory :user_password_without_lowercase_letter do
+      name { nil }
+      uid { email }
+      password { '123STRONG$' }
+      password_confirmation { '123STRONG$' }
+    end
+
     factory :user_with_nil_name do
       name { nil }
       uid { email }
-      password { '12345678' }
+      password { '12345678aA.' }
       password_confirmation { password }
     end
 
-    factory :user_with_invalid_email do
+    factory :user_with_empty_email_address do
       email { '@emai.com' }
       name { nil }
       uid { email }
@@ -51,6 +79,20 @@ FactoryBot.define do
       name { nil }
       uid { email }
       password { '12345678' }
+      password_confirmation { password }
+    end
+
+    factory :valid_user do
+      name { 'pedro' }
+      uid { email }
+      password { '12345678aA.' }
+      password_confirmation { password }
+    end
+
+    factory :valid_user_two do
+      name { 'ramon' }
+      uid { email }
+      password { '12345678aA.' }
       password_confirmation { password }
     end
   end

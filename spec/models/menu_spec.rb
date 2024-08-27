@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe Menu, type: :model do
-  subject(:menu) { build :menu }
+RSpec.describe Menu do
+  subject(:menu) { build(:menu) }
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:title) }
